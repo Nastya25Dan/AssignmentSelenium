@@ -96,14 +96,18 @@ public class Assignment1 {
 		
 		
 		//13. Enter a valid expiration date (newer than the current date)
-		
 		LocalDate today = LocalDate.now();
 		today = today.plusYears(4);
 		int month = today.getMonthValue();
 		String year = String.valueOf(today.getYear());
 		
 		//DateTimeFormatter f1 = DateTimeFormatter.ofPattern("MM/yy");
-		String dateAndYear = month +"/" + year.substring(2);
+		String dateAndYear = "";
+		if(month==10 || month==11 ||month==12) {
+			dateAndYear += month +"/" + year.substring(2);
+			}else {
+				dateAndYear += "0" + month +"/" + year.substring(2);
+			}
 		//LocalDate date5 = LocalDate.parse(dateAndYear, f1);
 		
 		//System.out.println(dateAndYear);
